@@ -1,0 +1,58 @@
+<p-panel header="Adicionar Empréstimo">
+    <form [formGroup]="form" (ngSubmit)="salvar()">
+        <div class="p-fluid">
+            <div class="p-field">
+                <label for="usuario">Usuário</label>
+                <p-dropdown
+                    [options]="usuarioOptions"
+                    optionLabel="label"
+                    optionValue="value"
+                    formControlName="usuarioId"
+                    placeholder="Selecione">
+                </p-dropdown>
+            </div>
+
+            <div class="p-field">
+                <label for="livro">Livro</label>
+                <p-dropdown
+                    [options]="livroOptions"
+                    optionLabel="label"
+                    optionValue="value"
+                    formControlName="livroId"
+                    placeholder="Selecione">
+                </p-dropdown>
+            </div>
+
+            <div class="p-field">
+                <label for="dataEmprestimo">Data Empréstimo</label>
+                <p-calendar formControlName="dataEmprestimo" showIcon></p-calendar>
+            </div>
+            
+            <div class="p-field">
+                <label for="dataDevolucaoPrevista">Data Devolução Prevista</label>
+                <p-calendar formControlName="dataDevolucaoPrevista" showIcon panelClass="centralizado"></p-calendar>
+            </div>
+            
+            <div class="p-field">
+                <label for="status">Status</label>
+                <p-dropdown
+                    [options]="statusOptions"
+                    optionLabel="label"
+                    optionValue="value"
+                    formControlName="status">
+                </p-dropdown>
+            </div>
+
+            <div class="p-field">
+                <p-button type="submit" label="Salvar" icon="pi pi-check" [disabled]="form.invalid"></p-button>
+                <p-button
+                    type="button"
+                    label="Cancelar"
+                    icon="pi pi-times"
+                    class="p-button-secondary p-ml-2"
+                    routerLink="/emprestimos">
+                </p-button>
+            </div>
+        </div>
+    </form>
+</p-panel>

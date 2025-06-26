@@ -1,0 +1,23 @@
+<p-panel header="Adicionar Usuário">
+    <div class="p-fluid">
+        <div class="p-field">
+            <label for="nome">Nome</label>
+            <input pInputText id="nome" [(ngModel)]="novoUsuario.nome" name="nome" autocomplete="off" />
+        </div>
+        
+        <div class="p-field">
+            <label for="matricula">Matrícula</label>
+            <input pInputText id="matricula" [(ngModel)]="novoUsuario.matricula" name="matricula" autocomplete="off" />
+        </div>
+        
+        <div class="p-field">
+            <label for="curso">Curso</label>
+            <input pInputText id="curso" [(ngModel)]="novoUsuario.curso" name="curso" autocomplete="off" />
+        </div>
+        
+        <div class="p-field">
+            <p-button (click)="adicionarCliente()" label="Salvar" icon="pi pi-check" iconPos="right" />
+        </div>
+    </div>
+</p-panel>
+  

@@ -1,1 +1,415 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+/* Tema azul escuro para o projeto */
+:root {
+    --primary-color: #1e3c72;
+    --primary-light: #2a5298;
+    --primary-lighter: #4299e1;
+    --primary-dark: #1a365d;
+    --secondary-color: #f8f9fa;
+    --text-color: #333;
+    --border-color: #dee2e6;
+    --menu-bg: #1a365d;
+    --menu-hover: #2a5298;
+    --success-color: #28a745;
+    --success-hover: #218838;
+}
+
+body {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Estilos básicos para os campos de input */
+.p-field {
+    margin-bottom: 1rem;
+}
+
+.p-field label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: white !important;
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.p-field input,
+.p-field p-dropdown,
+.p-field p-calendar {
+    width: 100%;
+}
+
+.p-fluid .p-inputtext {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.p-fluid .p-inputtext:focus {
+    outline: none;
+    border-color: var(--primary-lighter);
+    box-shadow: 0 0 0 0.2rem rgba(66, 153, 225, 0.25);
+}
+
+/* Estilos para botões azuis escuros */
+.p-button {
+    margin-right: 0.5rem;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 6px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.p-button:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary-light);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(30, 60, 114, 0.3);
+}
+
+.p-button:active {
+    transform: translateY(0);
+}
+
+/* Estilos específicos para botões de salvar (verde) */
+.p-button[type="submit"],
+.p-button[label="Salvar"],
+.p-button[label*="Salvar"] {
+    background-color: var(--success-color) !important;
+    border-color: var(--success-color) !important;
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+.p-button[type="submit"]:hover,
+.p-button[label="Salvar"]:hover,
+.p-button[label*="Salvar"]:hover {
+    background-color: var(--success-hover) !important;
+    border-color: var(--success-hover) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3) !important;
+}
+
+.p-button.p-button-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.p-button.p-button-secondary:hover {
+    background-color: #e9ecef;
+    border-color: #adb5bd;
+}
+
+/* Estilos para painéis com fundo branco */
+.p-panel {
+    margin-bottom: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-color);
+}
+
+.p-panel .p-panel-header {
+    background-color: var(--primary-lighter);
+    color: white !important;
+    font-weight: 600;
+    border-radius: 8px 8px 0 0;
+    padding: 1rem;
+}
+
+.p-panel .p-panel-header .p-panel-title {
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.p-panel .p-panel-content {
+    padding: 1.5rem;
+}
+
+/* Estilos para dropdowns com fundo */
+.p-dropdown {
+    background-color: white;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    min-height: 45px;
+}
+
+.p-dropdown:not(.p-disabled):hover {
+    border-color: var(--primary-lighter);
+}
+
+.p-dropdown:not(.p-disabled).p-focus {
+    border-color: var(--primary-lighter);
+    box-shadow: 0 0 0 0.2rem rgba(66, 153, 225, 0.25);
+}
+
+/* Dropdown panel - fundo branco sólido */
+.p-dropdown-panel {
+    background-color: white !important;
+    border: 2px solid var(--primary-lighter) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
+    z-index: 9999 !important;
+    position: relative !important;
+}
+
+.p-dropdown-panel .p-dropdown-items-wrapper {
+    background-color: white !important;
+    border-radius: 6px !important;
+    overflow: hidden !important;
+}
+
+.p-dropdown-item {
+    padding: 0.75rem 1rem !important;
+    color: var(--text-color) !important;
+    background-color: white !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    transition: all 0.2s ease !important;
+}
+
+.p-dropdown-item:hover {
+    background-color: var(--primary-lighter) !important;
+    color: white !important;
+    transform: translateX(5px) !important;
+}
+
+.p-dropdown-item.p-highlight {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+/* Estilos para calendário */
+.p-calendar {
+    background-color: white;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    min-height: 45px;
+}
+
+.p-calendar:not(.p-disabled):hover {
+    border-color: var(--primary-lighter);
+}
+
+.p-calendar:not(.p-disabled).p-focus {
+    border-color: var(--primary-lighter);
+    box-shadow: 0 0 0 0.2rem rgba(66, 153, 225, 0.25);
+}
+
+/* Datepicker panel - fundo branco sólido */
+.p-datepicker {
+    background-color: white !important;
+    border: 2px solid var(--primary-lighter) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
+    z-index: 9999 !important;
+    position: relative !important;
+    padding: 1rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
+.p-datepicker .p-datepicker-header {
+    background-color: var(--primary-lighter) !important;
+    color: white !important;
+    border-radius: 6px 6px 0 0 !important;
+    margin: -1rem -1rem 1rem -1rem !important;
+    padding: 1rem !important;
+}
+
+.p-datepicker .p-datepicker-title {
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+.p-datepicker .p-datepicker-prev,
+.p-datepicker .p-datepicker-next {
+    color: white !important;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 4px !important;
+    padding: 0.5rem !important;
+}
+
+.p-datepicker .p-datepicker-prev:hover,
+.p-datepicker .p-datepicker-next:hover {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.p-datepicker .p-datepicker-calendar {
+    background-color: white !important;
+}
+
+.p-datepicker .p-datepicker-calendar th {
+    background-color: #f8f9fa !important;
+    color: var(--text-color) !important;
+    font-weight: 600 !important;
+    padding: 0.75rem !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.p-datepicker .p-datepicker-calendar td {
+    background-color: white !important;
+    border: 1px solid #f0f0f0 !important;
+}
+
+.p-datepicker .p-datepicker-calendar td > span {
+    color: var(--text-color) !important;
+    background-color: white !important;
+    border-radius: 4px !important;
+    padding: 0.5rem !important;
+    transition: all 0.2s ease !important;
+}
+
+.p-datepicker .p-datepicker-calendar td > span:hover {
+    background-color: var(--primary-lighter) !important;
+    color: white !important;
+}
+
+.p-datepicker .p-datepicker-calendar td > span.p-highlight {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+.p-datepicker .p-datepicker-calendar td > span.p-today {
+    background-color: var(--success-color) !important;
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+/* Estilos para tabelas */
+.p-datatable {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.p-datatable .p-datatable-header {
+    background-color: var(--primary-lighter);
+    color: white;
+    font-weight: 600;
+    padding: 1rem;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+    background-color: #f8f9fa;
+    color: var(--text-color);
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-color);
+    padding: 1rem;
+}
+
+.p-datatable .p-datatable-tbody > tr {
+    transition: background-color 0.3s ease;
+}
+
+.p-datatable .p-datatable-tbody > tr:hover {
+    background-color: rgba(66, 153, 225, 0.1);
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Estilos para formulários */
+form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-color);
+}
+
+/* Estilos específicos para labels em formulários com fundo azul */
+.p-panel .p-panel-content .p-field label {
+    color: white !important;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para mensagens de erro/sucesso */
+.p-message {
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+.p-message.p-message-success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.p-message.p-message-error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+/* Estilos para loading */
+.p-progress-spinner {
+    color: var(--primary-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .p-button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+        margin-right: 0;
+    }
+    
+    form {
+        padding: 1rem;
+    }
+    
+    .p-panel .p-panel-content {
+        padding: 1rem;
+    }
+}
+
+/* Centralizar apenas o painel do calendário de data de empréstimo */
+.p-datepicker.centralizado {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
+/* Dropdowns de Livro e Usuário com azul claro */
+.p-field [formcontrolname="usuarioId"] .p-dropdown-label,
+.p-field [formcontrolname="livroId"] .p-dropdown-label {
+    background-color: var(--primary-lighter) !important;
+    color: white !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 8px rgba(66, 153, 225, 0.15) !important;
+}
+
+.p-field [formcontrolname="usuarioId"] .p-dropdown,
+.p-field [formcontrolname="livroId"] .p-dropdown {
+    background-color: var(--primary-lighter) !important;
+    color: white !important;
+    border-radius: 6px !important;
+}
+
+.p-field [formcontrolname="usuarioId"] .p-dropdown .p-dropdown-trigger,
+.p-field [formcontrolname="livroId"] .p-dropdown .p-dropdown-trigger {
+    color: white !important;
+}

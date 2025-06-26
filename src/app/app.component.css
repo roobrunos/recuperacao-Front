@@ -1,0 +1,167 @@
+/* Layout principal da aplicação */
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+/* Cabeçalho */
+.app-header {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.app-title {
+  color: white;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Navegação principal */
+.main-nav {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Conteúdo principal */
+.app-content {
+  padding: 2rem;
+  min-height: calc(100vh - 200px);
+}
+
+/* Estilos personalizados para o menubar */
+:host ::ng-deep .custom-menubar {
+  background: transparent !important;
+  border: none !important;
+  padding: 0.5rem 2rem !important;
+}
+
+:host ::ng-deep .custom-menubar .p-menubar-root-list {
+  gap: 1rem;
+}
+
+:host ::ng-deep .custom-menubar .p-menuitem-link,
+:host ::ng-deep .custom-menubar .p-menuitem-text,
+:host ::ng-deep .custom-menubar .p-menuitem-icon {
+  color: white !important;
+}
+
+:host ::ng-deep .custom-menubar .p-menuitem-link:hover,
+:host ::ng-deep .custom-menubar .p-menuitem-link:focus {
+  color: white !important;
+}
+
+:host ::ng-deep .custom-menubar .p-menuitem-link {
+  font-weight: 500 !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+:host ::ng-deep .custom-menubar .p-menuitem-link:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+:host ::ng-deep .custom-menubar .p-menuitem-text {
+  font-size: 1rem !important;
+}
+
+:host ::ng-deep .custom-menubar .p-menuitem-icon {
+  margin-right: 0.5rem !important;
+}
+
+/* Submenu dropdown */
+:host ::ng-deep .custom-menubar .p-submenu-list {
+  background: #1a365d !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(10px) !important;
+  padding: 0.5rem !important;
+  min-width: 200px !important;
+}
+
+:host ::ng-deep .custom-menubar .p-submenu-list .p-menuitem-link {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 6px !important;
+  margin: 0.25rem 0 !important;
+  padding: 0.75rem 1rem !important;
+  color: #e2e8f0 !important;
+  transition: all 0.3s ease !important;
+}
+
+:host ::ng-deep .custom-menubar .p-submenu-list .p-menuitem-link:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+  transform: translateX(5px) !important;
+}
+
+:host ::ng-deep .custom-menubar .p-submenu-list .p-menuitem-text {
+  color: inherit !important;
+  font-size: 0.9rem !important;
+}
+
+:host ::ng-deep .custom-menubar .p-submenu-list .p-menuitem-icon {
+  color: inherit !important;
+  margin-right: 0.5rem !important;
+  font-size: 0.9rem !important;
+}
+
+/* Ícones específicos para cada seção */
+:host ::ng-deep .custom-menubar .p-menuitem-link[href*="livros"] {
+  border-left: 4px solid #4299e1 !important;
+}
+
+:host ::ng-deep .custom-menubar .p-menuitem-link[href*="usuarios"] {
+  border-left: 4px solid #48bb78 !important;
+}
+
+:host ::ng-deep .custom-menubar .p-menuitem-link[href*="emprestimos"] {
+  border-left: 4px solid #ed8936 !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 1.5rem;
+  }
+  
+  .app-content {
+    padding: 1rem;
+  }
+  
+  :host ::ng-deep .custom-menubar {
+    padding: 0.5rem 1rem !important;
+  }
+  
+  :host ::ng-deep .custom-menubar .p-menuitem-link {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-container {
+  animation: fadeInUp 0.6s ease-out;
+}

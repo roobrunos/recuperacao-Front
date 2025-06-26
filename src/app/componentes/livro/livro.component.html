@@ -1,0 +1,32 @@
+<p-panel header="Adicionar Livro">
+    <div class="p-fluid">
+        <div class="p-field">
+            <label for="titulo">Título</label>
+            <input pInputText id="titulo" [(ngModel)]="novoLivro.titulo" name="titulo" autocomplete="off" />
+        </div>
+        
+        <div class="p-field">
+            <label for="autor">Autor</label>
+            <input pInputText id="autor" [(ngModel)]="novoLivro.autor" name="autor" autocomplete="off" />
+        </div>
+        
+        <div class="p-field">
+            <label for="editora">Editora</label>
+            <input pInputText id="editora" [(ngModel)]="novoLivro.editora" name="editora" autocomplete="off" />
+        </div>
+        
+        <div class="p-field">
+            <label for="date">Data de Publicação</label>
+            <p-calendar
+                [(ngModel)]="novoLivro.dataPublicacao"
+                inputId="date"
+                showIcon>
+            </p-calendar>
+        </div>
+        
+        <div class="p-field">
+            <p-button (click)="adicionarLivro()" label="Salvar" icon="pi pi-check" iconPos="right" />
+        </div>
+    </div>
+</p-panel>
+  
